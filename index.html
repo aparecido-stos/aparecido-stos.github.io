@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HTML</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+
+<body>
+  <div class="container">
+    <div class="form-body">
+      <p class="text">Login</p>
+      <form class="form-login">
+        <input type="text" id="login" placeholder="Usuário" value="Gustavo" required maxlength="15"/>
+        <input type="password" id="password" placeholder="Senha" value="1234" required maxlength="4"/>
+        <button class="btn" type="button">Login</button>
+        <div class="loading-overlay" id="loadingOverlay">
+          <div class="loader"></div>
+      </form>
+    </div>
+  </div>
+  <script>
+    //login
+    const btnLogin = document.querySelector(".btn");
+    btnLogin.addEventListener("click", function () {
+    const login = document.getElementById("login").value;
+    const passwordDefault = document.getElementById("password").value;
+    const username = "Gustavo";
+    const password = "1234";
+    
+    loadingOverlay.style.display = "block"; // Exibe a tela de carregamento
+    setTimeout(function () {
+    if (login == username && passwordDefault == password) {
+    location.href = "menu.html";
+    } else {
+    alert("Senha incorreta");
+    }
+    loadingOverlay.style.display = "none"; // Oculta a tela de carregamento
+    }, 1500); // Simula um tempo de processamento de 2 segundos
+    });
+    
+    const passwordInput = document.getElementById("password");
+    passwordInput.addEventListener("keydown", function (event) {
+    if (event.key === "Enter") {
+    event.preventDefault();
+    btnLogin.click();
+    }
+    });
+    
+  </script>
+</body>
+
+</html>

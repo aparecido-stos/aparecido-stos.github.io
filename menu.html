@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estoque</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="dropdown">
+      <button class="dropdown-btn">Menu ▼</button>
+      <ul class="dropdown-content">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+      </ul>
+    </div>
+    <section class="inputMarket">
+      <h3 id="title">Adicionar Clientes ⇵</h3>
+      <hr />
+      <p>
+        <input
+          type="text"
+          name="clientName"
+          id="clientName"
+          placeholder="Nome do cliente..."
+          required
+          maxlength="15"
+        />
+        <br />
+        <input type="number" name="numberSosP" id="numberSosP" min="1" />
+        <label for="Sos">Sos P / 50</label>
+        <br />
+        <input type="number" name="numberSosM" id="numberSosM" min="1" />
+        <label for="Sos">Sos M / 50</label>
+        <br />
+        <input type="number" name="numberSosG" id="numberSosG" min="1" />
+        <label for="Sos">Sos G / 50</label>
+        <br />
+        <input type="number" name="numberSosGG" id="numberSosGG" min="1" />
+        <label for="Sos">Sos GG / 50</label>
+        <br />
+        <button id="addClientBtn" type="button">Adicionar</button>
+        <br />
+      </p>
+      <section id="menuPedidos">
+        <section class="pedidosAFazer">
+          <h3 class="pedidos">Pedidos a fazer</h3>
+          <ul id="clientList"></ul>
+        </section>
+        <section class="pedidosProntos">
+          <h3 class="pedidos">Pedidos prontos</h3>
+          <ul id="clientListOk"></ul>
+        </section>
+      </section>
+    </section>
+    <script src="main.js"></script>
+  </body>
+</html>
