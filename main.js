@@ -1,3 +1,5 @@
+const usename = document.getElementById("username");
+
 //Menu dropdawn
 const h3 = document.querySelector(".inputMarket > h3");
 h3.addEventListener("click", function () {
