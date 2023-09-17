@@ -1,5 +1,5 @@
 nav.menuLateral {
-  width: 50px;
+  width: 35px;
   height: 100%;
   background: #3d35ba;
   box-shadow: 20px 10px 50px rgba(0, 0, 0, 0.2);
@@ -12,24 +12,41 @@ nav.menuLateral {
   overflow: hidden;
 }
 
+@media (max-width: 500px) {
+  nav.menuLateral {
+    width: 0px;
+    height: 100%;
+    background: #3d35ba;
+    box-shadow: 20px 10px 50px rgba(0, 0, 0, 0.2);
+    padding: 40px 0 40px 1%;
+    transition: 0.4s;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+  }
+}
+
 nav.menuLateral:hover {
-  width: 300px;
+  width: 210px;
 }
 
 .btnExpandir {
   width: 100%;
-  padding-left: 10px;
+  padding-left: 5px;
 }
 
 .btnExpandir > i {
   color: white;
-  font-size: 24px;
+  font-size: 23px;
   cursor: pointer;
+  padding: 0px;
 }
 
 ul {
   height: 100%;
-  padding: 5px;
+  padding: 2px;
   list-style-type: none;
 }
 
@@ -48,7 +65,7 @@ ul li.itemMenu a .txtLink {
 }
 
 ul li.itemMenu a .icon {
-  font-size: 30px;
+  font-size: 23px;
 }
 
 ul li.itemMenu:hover {
@@ -259,8 +276,8 @@ input::placeholder {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
-.inputMarket{
- padding: 10px;
+.inputMarket {
+  padding: 10px;
 }
 .inputMarket p {
   overflow: hidden;

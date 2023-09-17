@@ -12,28 +12,6 @@ h3.addEventListener("click", function () {
   clientName.focus();
 });
 
-//menu lateral esquerdo dropdown
-const dropdownButton = document.querySelector(".dropdown-btn");
-const dropdownContent = document.querySelector(".dropdown-content");
-
-dropdownButton.addEventListener("click", () => {
-  if (
-    dropdownContent.style.width === "0px" ||
-    dropdownContent.style.width === ""
-  ) {
-    dropdownContent.style.width = "250px";
-  } else {
-    dropdownContent.style.width = "0px";
-  }
-});
-
-// Close the dropdown when clicking outside of it
-window.addEventListener("click", (event) => {
-  if (!dropdownButton.contains(event.target)) {
-    dropdownContent.style.width = "0px";
-  }
-});
-
 // Adicionar clientes
 
 const clientName = document.getElementById("clientName");
