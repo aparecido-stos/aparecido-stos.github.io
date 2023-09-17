@@ -1,9 +1,10 @@
 nav.menuLateral {
   width: 50px;
   height: 100%;
-  background-color: skyblue;
+  background: #3d35ba;
+  box-shadow: 20px 10px 50px rgba(0, 0, 0, 0.2);
   padding: 40px 0 40px 1%;
-  box-shadow: 3px 0 0 blue;
+  transition: 0.3s;
 
   position: fixed;
   top: 0;
@@ -51,11 +52,11 @@ ul li.itemMenu a .icon {
 }
 
 ul li.itemMenu:hover {
-  background: blue;
+  background: #0275d8;
 }
 
 ul li.itemMenu {
-  transition: 0.2s;
+  transition: 0.3s;
 }
 
 body {
@@ -67,6 +68,7 @@ body {
 /* Titulo da tela adicionar cliente*/
 #title {
   display: block;
+  height: 45px;
   width: 30vh;
   margin: auto;
   color: skyblue;
@@ -257,6 +259,9 @@ input::placeholder {
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 }
 
+.inputMarket{
+ padding: 10px;
+}
 .inputMarket p {
   overflow: hidden;
   transition: 0.5s;
