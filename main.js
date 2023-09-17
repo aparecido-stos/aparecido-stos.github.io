@@ -1,5 +1,3 @@
-const usename = document.getElementById("username");
-
 //Menu dropdawn
 const h3 = document.querySelector(".inputMarket > h3");
 h3.addEventListener("click", function () {
@@ -14,6 +12,7 @@ h3.addEventListener("click", function () {
   clientName.focus();
 });
 
+//menu lateral esquerdo dropdown
 const dropdownButton = document.querySelector(".dropdown-btn");
 const dropdownContent = document.querySelector(".dropdown-content");
 

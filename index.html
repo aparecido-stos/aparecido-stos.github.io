@@ -23,7 +23,7 @@
     </div>
   </div>
   <script>
-    //Parte do login inial do site
+    //Parte do login inical do site
 const btnLogin = document.querySelector(".btn");
 btnLogin.addEventListener("click", function () {
   const login = document.getElementById("login").value;
@@ -47,7 +47,7 @@ btnLogin.addEventListener("click", function () {
   }, 1500); // Simula um tempo de processamento de 2 segundos
 });
 //Apenas para tecla enter do teclado PC funcione
-const passwordInput = document.getElementById("password");
+const passwordInput = document.getElementById("password").value;
 passwordInput.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     event.preventDefault();
