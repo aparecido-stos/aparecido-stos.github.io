@@ -43,31 +43,29 @@
       <section class="inputMarket">
         <h3 id="title">Adicionar Clientes ⇵</h3>
         <hr />
+        <div id="minhaModal" class="modal">
+          <div class="modalConteudo">
+            <span class="fechar" id="fecharModal">&times;</span>
         <p>
-          <input
-            type="text"
-            name="clientName"
-            id="clientName"
-            placeholder="Nome do cliente..."
-            required
-            maxlength="15"
-          />
+          <input type="text" name="clientName" id="clientName" placeholder="Nome do cliente..." />
           <br />
           <input type="number" name="numberSosP" id="numberSosP" min="1" />
           <label for="Sos">Sos P / 50</label>
           <br />
-          <input type="number" name="numberSosM" id="numberSosM" min="1" />
+          <input type="number" name="numberSosM" id="numberSosM" min="1"/>
           <label for="Sos">Sos M / 50</label>
           <br />
-          <input type="number" name="numberSosG" id="numberSosG" min="1" />
+          <input type="number" name="numberSosG" id="numberSosG" min="1"/>
           <label for="Sos">Sos G / 50</label>
           <br />
-          <input type="number" name="numberSosGG" id="numberSosGG" min="1" />
+          <input type="number" name="numberSosGG" id="numberSosGG" min="1"/>
           <label for="Sos">Sos GG / 50</label>
           <br />
           <button id="addClientBtn" type="button">Adicionar</button>
           <br />
         </p>
+        </div>
+        </div>
       </section>
 
       <section id="menuPedidos">

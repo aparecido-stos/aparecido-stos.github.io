@@ -1,3 +1,24 @@
+//janela de adicionar clientes
+const btnAbrirModal = document.getElementById('title')
+const modal = document.getElementById('minhaModal')
+const btnFecharModal = document.getElementById('fecharModal')
+
+btnAbrirModal.addEventListener('click', function() {
+  modal.style.display = 'block'
+})
+
+btnFecharModal.addEventListener('click', function() {
+  modal.style.display = 'none'
+})
+
+window.addEventListener('click', function(event) {
+  if (event.target === modal) {
+    modal.style.display = 'none'
+  }
+})
+
+
+
 //menu lateral
 const itemMenu = document.querySelectorAll(".itemMenu");
 
@@ -12,20 +33,6 @@ const btnExp = document.querySelector("#btnExp");
 const menuLateral = document.querySelector(".menuLateral");
 btnExp.addEventListener("click", function () {
   menuLateral.classList.toggle("expandir");
-});
-
-//Menu dropdawn em adicionar cliente
-const h3 = document.querySelector(".inputMarket > h3");
-h3.addEventListener("click", function () {
-  const inputMarket = document.querySelector(".inputMarket p");
-
-  if (inputMarket.classList.contains("mostrar")) {
-    h3.innerHTML = "Adicionar Clientes ⇵";
-    inputMarket.classList.remove("mostrar");
-  } else {
-    inputMarket.classList.add("mostrar");
-  }
-  clientName.focus();
 });
 
 // Adicionar clientes
