@@ -13,7 +13,6 @@
   </head>
 
   <body>
-    
     <nav class="menuLateral">
       <div class="btnExpandir">
         <i class="bi bi-list" id="btnExp"></i>
@@ -41,43 +40,43 @@
     </nav>
 
     <section class="main">
-    <section class="inputMarket">
-      <h3 id="title">Adicionar Clientes ⇵</h3>
-      <hr />
-      <p>
-        <input
-          type="text"
-          name="clientName"
-          id="clientName"
-          placeholder="Nome do cliente..."
-          required
-          maxlength="15"
-        />
-        <br />
-        <input type="number" name="numberSosP" id="numberSosP" min="1" />
-        <label for="Sos">Sos P / 50</label>
-        <br />
-        <input type="number" name="numberSosM" id="numberSosM" min="1" />
-        <label for="Sos">Sos M / 50</label>
-        <br />
-        <input type="number" name="numberSosG" id="numberSosG" min="1" />
-        <label for="Sos">Sos G / 50</label>
-        <br />
-        <input type="number" name="numberSosGG" id="numberSosGG" min="1" />
-        <label for="Sos">Sos GG / 50</label>
-        <br />
-        <button id="addClientBtn" type="button">Adicionar</button>
-        <br />
-      </p>
+      <section class="inputMarket">
+        <h3 id="title">Adicionar Clientes ⇵</h3>
+        <hr />
+        <p>
+          <input
+            type="text"
+            name="clientName"
+            id="clientName"
+            placeholder="Nome do cliente..."
+            required
+            maxlength="15"
+          />
+          <br />
+          <input type="number" name="numberSosP" id="numberSosP" min="1" />
+          <label for="Sos">Sos P / 50</label>
+          <br />
+          <input type="number" name="numberSosM" id="numberSosM" min="1" />
+          <label for="Sos">Sos M / 50</label>
+          <br />
+          <input type="number" name="numberSosG" id="numberSosG" min="1" />
+          <label for="Sos">Sos G / 50</label>
+          <br />
+          <input type="number" name="numberSosGG" id="numberSosGG" min="1" />
+          <label for="Sos">Sos GG / 50</label>
+          <br />
+          <button id="addClientBtn" type="button">Adicionar</button>
+          <br />
+        </p>
       </section>
-      
+
       <section id="menuPedidos">
         <section class="pedidosAFazer">
-          <h3 class="pedidos">Pedidos a fazer</h3>
+          <h3 class="pedidos">Tarefas pendentes</h3>
           <ul id="clientList"></ul>
         </section>
         <section class="pedidosProntos">
-          <h3 class="pedidos">Pedidos prontos</h3>
+          <h3 class="pedidos">Pedidos finalizados</h3>
           <ul id="clientListOk"></ul>
         </section>
       </section>
