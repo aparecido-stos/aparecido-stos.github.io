@@ -1,3 +1,5 @@
+/*menu lateral*/
+
 nav.menuLateral {
   width: 250px;
   height: 100%;
@@ -28,13 +30,15 @@ nav.menuLateral {
   }
 }
 
-nav.menuLateral:hover {
+nav.menuLateral.expandir {
   width: 250px;
 }
 
 .btnExpandir {
-  width: 100%;
-  padding-left: 5px;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 999;
 }
 
 .btnExpandir > i {
@@ -79,7 +83,8 @@ ul li.itemMenu {
 ul li.ativo {
   background-color: #0275d8;
 }
-
+ /*fim do menu lateral*/
+ 
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
   background-color: #3d35ba;

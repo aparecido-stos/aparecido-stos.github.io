@@ -1,17 +1,18 @@
 //menu lateral
-const itemMenu =  document.querySelectorAll('.itemMenu')
+const itemMenu = document.querySelectorAll(".itemMenu");
+
 function selectLink() {
-  itemMenu.forEach((item)=>
-  item.classList.remove('ativo'))
-  this.classList.add('ativo')
+  itemMenu.forEach((item) => item.classList.remove("ativo"));
+  this.classList.add("ativo");
 }
 
-itemMenu.forEach((item)=>
-    item.addEventListener('click', selectLink))
+itemMenu.forEach((item) => item.addEventListener("click", selectLink));
 
-
-
-
+const btnExp = document.querySelector("#btnExp");
+const menuLateral = document.querySelector(".menuLateral");
+btnExp.addEventListener("click", function () {
+  menuLateral.classList.toggle("expandir");
+});
 
 //Menu dropdawn em adicionar cliente
 const h3 = document.querySelector(".inputMarket > h3");
