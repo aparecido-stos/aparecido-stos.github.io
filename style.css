@@ -1,5 +1,5 @@
 nav.menuLateral {
-  width: 35px;
+  width: 250px;
   height: 100%;
   background: #3d35ba;
   box-shadow: 20px 10px 50px rgba(0, 0, 0, 0.2);
@@ -12,7 +12,7 @@ nav.menuLateral {
   overflow: hidden;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 1000px) {
   nav.menuLateral {
     width: 0px;
     height: 100%;
@@ -29,7 +29,7 @@ nav.menuLateral {
 }
 
 nav.menuLateral:hover {
-  width: 210px;
+  width: 250px;
 }
 
 .btnExpandir {
@@ -68,12 +68,16 @@ ul li.itemMenu a .icon {
   font-size: 23px;
 }
 
-ul li.itemMenu:hover {
+ul li.itemMenu.expandir {
   background: #0275d8;
 }
 
 ul li.itemMenu {
   transition: 0.3s;
+}
+
+ul li.ativo {
+  background-color: #0275d8;
 }
 
 body {

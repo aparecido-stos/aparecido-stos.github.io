@@ -1,4 +1,19 @@
-//Menu dropdawn
+//menu lateral
+const itemMenu =  document.querySelectorAll('.itemMenu')
+function selectLink() {
+  itemMenu.forEach((item)=>
+  item.classList.remove('ativo'))
+  this.classList.add('ativo')
+}
+
+itemMenu.forEach((item)=>
+    item.addEventListener('click', selectLink))
+
+
+
+
+
+//Menu dropdawn em adicionar cliente
 const h3 = document.querySelector(".inputMarket > h3");
 h3.addEventListener("click", function () {
   const inputMarket = document.querySelector(".inputMarket p");
