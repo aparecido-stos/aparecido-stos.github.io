@@ -1,4 +1,3 @@
-
 const btnLogin = document.querySelector(".btn");
 btnLogin.addEventListener("click", function () {
   const login = document.getElementById("login").value;
