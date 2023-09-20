@@ -1,10 +1,15 @@
-.addPedidosTitle {
-  text-align: center;
-}
 
 #ambosLados {
   height: 15px;
   width: 15px;
+}
+
+.UlPedidos {
+  columns: 2;
+}
+
+.pedidocliente {
+  text-align: left;
 }
 
 /*janela modal de adicionar clientes*/
@@ -21,7 +26,7 @@
 .modalConteudo {
   background-color: #ffffffe4;
   position: absolute;
-  height: 60vh;
+  height: 70vh;
   width: 80%;
   top: 40%;
   left: 50%;
