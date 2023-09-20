@@ -48,27 +48,41 @@
             <span class="fechar" id="fecharModal">&times;</span>
             <div class="dadosClient">
             <h3>Adicionar Pedidos</h3>
+            <hr>
         <p>
           <input type="text" name="clientName" id="clientName" placeholder="Nome do cliente..." />
-          <h5>Selecione uma opção:</h5>
-    <select id="opcoes">
-        <option value="opcao1">Opção 1</option>
-        <option value="opcao2">Opção 2</option>
-        <option value="opcao3">Opção 3</option>
+          <br>
+         <label for="opcao">Local:</label>
+          <select id="opcoes">
+        <option value="opcao1">Santos - SP</option>
+        <option value="opcao2">São Vicente - SP</option>
+        <option value="opcao3">Guarujá - SP</option>
+        <option value="opcao3">Loja Conselheiro</option>
+        <option value="opcao3">Loja Canal 3</option>
+        <option value="opcao3">Praia Grande - SP</option>
+        <option value="opcao3">Cubatão - SP</option>
+        <option value="opcao3">Bertioga - SP</option>
+        <option value="opcao3">Registro - SP</option>
+        <option value="opcao3">Peruíbe - SP</option>
+        <option value="opcao3">Itanhaém - SP</option>
+        <option value="opcao3">Mongaguá - SP</option>
     </select>
-
-    <p>Valor selecionado: <span id="valorSelecionado"></span></p>
-
+  
+    <label for="AmbosLados">Impresso ambos lados:</label> 
+    <input type="checkbox" name="ambosLados" id="ambosLados"/>
+    <br><br>
+    <label for="InformacaoExtra">Informação extra:</label>
+    <br>
+    <textarea name="informacao" id="" cols="51" rows="6"></textarea>
   </div>
   <div class="pedidocliente">
-
-          <br />
+    <hr>
           <input type="number" name="numberSosP" id="numberSosP" min="1" />
           <label for="Sos">Sos P / 50</label>
-          <br />
+        
           <input type="number" name="numberSosM" id="numberSosM" min="1"/>
           <label for="Sos">Sos M / 50</label>
-          <br />
+          
           <input type="number" name="numberSosG" id="numberSosG" min="1"/>
           <label for="Sos">Sos G / 50</label>
           <br />
