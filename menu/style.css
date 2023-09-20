@@ -4,6 +4,15 @@
   width: 15px;
 }
 
+#informacao {
+  width: 300px;
+  height: 60px;
+}
+
+.addPedidosTitle {
+  text-align: center;
+}
+
 .UlPedidos {
   columns: 2;
 }
