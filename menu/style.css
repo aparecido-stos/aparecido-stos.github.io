@@ -1,4 +1,3 @@
-
 /*janela modal de adicionar clientes*/
 .modal {
   display: none;
@@ -320,5 +319,6 @@ input::placeholder {
 
 .inputMarket {
   padding-top: 18px;
+
 }
 

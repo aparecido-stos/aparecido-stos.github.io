@@ -41,13 +41,27 @@
 
     <section class="main">
       <section class="inputMarket">
-        <h3 id="title">Adicionar Clientes ⇵</h3>
+        <h3 id="title">Adicionar Clientes</h3>
         <hr />
         <div id="minhaModal" class="modal">
           <div class="modalConteudo">
             <span class="fechar" id="fecharModal">&times;</span>
+            <div class="dadosClient">
+            <h3>Adicionar Pedidos</h3>
         <p>
           <input type="text" name="clientName" id="clientName" placeholder="Nome do cliente..." />
+          <h5>Selecione uma opção:</h5>
+    <select id="opcoes">
+        <option value="opcao1">Opção 1</option>
+        <option value="opcao2">Opção 2</option>
+        <option value="opcao3">Opção 3</option>
+    </select>
+
+    <p>Valor selecionado: <span id="valorSelecionado"></span></p>
+
+  </div>
+  <div class="pedidocliente">
+
           <br />
           <input type="number" name="numberSosP" id="numberSosP" min="1" />
           <label for="Sos">Sos P / 50</label>
@@ -66,8 +80,8 @@
         </p>
         </div>
         </div>
-      </section>
-
+        </div>
+    </section>
       <section id="menuPedidos">
         <section class="pedidosAFazer">
           <h3 class="pedidos">Tarefas pendentes</h3>
