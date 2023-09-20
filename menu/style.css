@@ -1,3 +1,7 @@
+.addPedidosTitle {
+  text-align: center;
+}
+
 /*janela modal de adicionar clientes*/
 .modal {
   display: none;
