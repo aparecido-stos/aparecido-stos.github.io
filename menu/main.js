@@ -244,4 +244,6 @@ addClientBtn.addEventListener("click", function () {
   sosM.value = "";
   sosG.value = "";
   sosGG.value = "";
+
+  alert('Adicionado com sucesso')
 });
