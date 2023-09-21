@@ -1,23 +1,21 @@
 //janela de adicionar clientes
-const btnAbrirModal = document.getElementById('title')
-const modal = document.getElementById('minhaModal')
-const btnFecharModal = document.getElementById('fecharModal')
+const btnAbrirModal = document.getElementById("title");
+const modal = document.getElementById("minhaModal");
+const btnFecharModal = document.getElementById("fecharModal");
 
-btnAbrirModal.addEventListener('click', function() {
-  modal.style.display = 'block'
-})
+btnAbrirModal.addEventListener("click", function () {
+  modal.style.display = "block";
+});
 
-btnFecharModal.addEventListener('click', function() {
-  modal.style.display = 'none'
-})
+btnFecharModal.addEventListener("click", function () {
+  modal.style.display = "none";
+});
 
-window.addEventListener('click', function(event) {
+window.addEventListener("click", function (event) {
   if (event.target === modal) {
-    modal.style.display = 'none'
+    modal.style.display = "none";
   }
-})
-
-
+});
 
 //menu lateral
 const itemMenu = document.querySelectorAll(".itemMenu");
@@ -245,5 +243,34 @@ addClientBtn.addEventListener("click", function () {
   sosG.value = "";
   sosGG.value = "";
 
-  alert('Adicionado com sucesso')
+  alert("Adicionado com sucesso");
+});
+
+const addOutraEmbalagem = document.getElementById("addOutraEmbalagem");
+
+addOutraEmbalagem.addEventListener("click", function () {
+  // Obtém o valor do input para o nome da outra embalagem
+  const inputOutraEmbalagem = document.getElementById("inputOutraEmbalagem").value;
+
+  // Cria um novo elemento de lista
+  const novoItemPedido = document.createElement("li");
+
+  // Cria a caixa de input
+  const inputEmbalagem = document.createElement("input");
+  inputEmbalagem.type = "text";
+  inputEmbalagem.id = 'numberSosG'
+  inputEmbalagem.value = ''
+  
+
+  // Cria a label para a embalagem
+  const labelEmbalagem = document.createElement("label");
+  labelEmbalagem.textContent = inputOutraEmbalagem;
+
+  // Adiciona a caixa de input e a label ao novo elemento de lista
+  novoItemPedido.appendChild(inputEmbalagem);
+  novoItemPedido.appendChild(labelEmbalagem);
+
+  // Adiciona o novo elemento de lista à lista de pedidos (UlPedidos)
+  const UlPedidos = document.querySelector(".UlPedidos");
+  UlPedidos.appendChild(novoItemPedido);
 });
