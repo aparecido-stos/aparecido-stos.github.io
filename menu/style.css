@@ -9,6 +9,11 @@
   height: 60px;
 }
 
+.totalPedidos {
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+}
+
 .addPedidosTitle {
   text-align: center;
 }
