@@ -43,9 +43,14 @@ const sosP = document.getElementById("numberSosP");
 const sosM = document.getElementById("numberSosM");
 const sosG = document.getElementById("numberSosG");
 const sosGG = document.getElementById("numberSosGG");
+const hf101 = document.getElementById("numberhf101");
+const hf102 = document.getElementById("numberhf102");
+const hf132 = document.getElementById("numberhf132");
+const hf100tp = document.getElementById("numberhf100tp");
 const pedidosAFazer = document.querySelector(".pedidosAFazer");
 
 clientName.focus;
+
 addClientBtn.addEventListener("click", function () {
   // Verifica se o nome do cliente não está vazio
   if (clientName.value.trim() === "") {
@@ -62,26 +67,6 @@ addClientBtn.addEventListener("click", function () {
     sosGG.value.trim() === ""
   ) {
     alert("Por favor, insira pelo menos um valor em um campo SOS.");
-    return;
-  }
-
-  if (parseInt(sosP.value) === 0) {
-    alert("Sos nao pode ser 0");
-    return;
-  }
-
-  if (parseInt(sosM.value) === 0) {
-    alert("Sos nao pode ser 0");
-    return;
-  }
-
-  if (parseInt(sosG.value) === 0) {
-    alert("Sos nao pode ser 0");
-    return;
-  }
-
-  if (parseInt(sosGG.value) === 0) {
-    alert("Sos nao pode ser 0");
     return;
   }
 
@@ -224,6 +209,19 @@ addClientBtn.addEventListener("click", function () {
     sosGGli.innerText = "";
   }
 
+  const hf101Li = document.createElement("li");
+  hf101Li.className = "hf101Li";
+  hf101Li.innerText = hf101.value + " HF 101 ";
+  if (hf101.value.trim() !== "") {
+    hf101Li.innerText = hf101.value + " HF 101";
+  } else {
+    hf101Li.innerText = "";
+  }
+
+  const outraEmbalagem = document.createElement("li");
+  outraEmbalagem.className = "sosGli";
+  outraEmbalagem.innerText = inputOutraEmbalagem.value
+
   clientNameList.append(readyClient, clientNameListRemove);
 
   divClient.append(
@@ -232,6 +230,8 @@ addClientBtn.addEventListener("click", function () {
     sosMli,
     sosGli,
     sosGGli,
+    hf101Li,
+    outraEmbalagem,
     dateHoursCurrent
   );
 
@@ -250,7 +250,9 @@ const addOutraEmbalagem = document.getElementById("addOutraEmbalagem");
 
 addOutraEmbalagem.addEventListener("click", function () {
   // Obtém o valor do input para o nome da outra embalagem
-  const inputOutraEmbalagem = document.getElementById("inputOutraEmbalagem").value;
+  let inputOutraEmbalagem = document.getElementById(
+    "inputOutraEmbalagem"
+  ).value;
 
   // Cria um novo elemento de lista
   const novoItemPedido = document.createElement("li");
@@ -258,18 +260,16 @@ addOutraEmbalagem.addEventListener("click", function () {
   // Cria a caixa de input
   const inputEmbalagem = document.createElement("input");
   inputEmbalagem.type = "text";
-  inputEmbalagem.id = 'numberSosG'
+  inputEmbalagem.id = "numberSosG";
   inputEmbalagem.value = ''
-  
+  document.body.appendChild(inputEmbalagem)
 
   // Cria a label para a embalagem
   const labelEmbalagem = document.createElement("label");
   labelEmbalagem.textContent = inputOutraEmbalagem;
 
   // Adiciona a caixa de input e a label ao novo elemento de lista
-  novoItemPedido.appendChild(inputEmbalagem);
-  novoItemPedido.appendChild(labelEmbalagem);
-
+  novoItemPedido.append(inputEmbalagem, labelEmbalagem);
   // Adiciona o novo elemento de lista à lista de pedidos (UlPedidos)
   const UlPedidos = document.querySelector(".UlPedidos");
   UlPedidos.appendChild(novoItemPedido);

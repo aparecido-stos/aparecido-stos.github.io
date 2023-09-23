@@ -19,7 +19,7 @@
 }
 
 .UlPedidos {
-  columns: 2;
+  columns: 3;
 }
 
 .pedidocliente {
@@ -40,7 +40,7 @@
 .modalConteudo {
   background-color: #ffffffe4;
   position: absolute;
-  height: 80%;
+  height: 90%;
   width: 80%;
   top: 50%;
   left: 50%;
@@ -88,6 +88,11 @@ nav.menuLateral {
     left: 0;
     overflow: hidden;
   }
+
+  .UlPedidos {
+    columns: 2;
+  }
+
 }
 
 nav.menuLateral.expandir {
@@ -234,7 +239,8 @@ body {
 .sosPli,
 .sosMli,
 .sosGli,
-.sosGGli {
+.sosGGli,
+.hf101Li {
   padding-top: 3px;
   padding-right: 3px;
   margin-right: auto;
@@ -331,7 +337,12 @@ input::placeholder {
 #numberSosP,
 #numberSosM,
 #numberSosG,
-#numberSosGG {
+#numberSosGG,
+#numberhf101,
+#numberhf102,
+#numberhf132,
+#numberhf100tp
+ {
   border-radius: 30px;
   text-align: center;
   font-size: 15px;
