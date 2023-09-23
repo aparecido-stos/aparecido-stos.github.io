@@ -36,6 +36,7 @@ btnExp.addEventListener("click", function () {
 // Adicionar clientes
 
 const clientName = document.getElementById("clientName");
+const local = document.getElementById("opcoes")
 const clientList = document.getElementById("clientList");
 const clientListOk = document.getElementById("clientListOk");
 const addClientBtn = document.getElementById("addClientBtn");
@@ -218,11 +219,15 @@ addClientBtn.addEventListener("click", function () {
     hf101Li.innerText = "";
   }
 
+  const localLi = document.createElement("li");
+  localLi.className = "localLi";
+  localLi.innerText = local.value
+
   const outraEmbalagem = document.createElement("li");
   outraEmbalagem.className = "sosGli";
   outraEmbalagem.innerText = inputOutraEmbalagem.value
 
-  clientNameList.append(readyClient, clientNameListRemove);
+  clientNameList.append(localLi,readyClient, clientNameListRemove);
 
   divClient.append(
     clientNameList,
