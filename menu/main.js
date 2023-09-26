@@ -36,7 +36,7 @@ btnExp.addEventListener("click", function () {
 // Adicionar clientes
 
 const clientName = document.getElementById("clientName");
-const local = document.getElementById("opcoes")
+const local = document.getElementById("opcoes");
 const clientList = document.getElementById("clientList");
 const clientListOk = document.getElementById("clientListOk");
 const addClientBtn = document.getElementById("addClientBtn");
@@ -51,8 +51,19 @@ const hf100tp = document.getElementById("numberhf100tp");
 const pedidosAFazer = document.querySelector(".pedidosAFazer");
 
 clientName.focus;
+let totalPedidosPendentes = 0;
+let totalPedidosFinalizados = 0;
+
+function atualizarLabels() {
+  const totalPedidosPendentesLabel = document.querySelector(".totalPedidosPendentes");
+  const totalPedidosFinalizadosLabel = document.querySelector(".totalPedidosFinalizados");
+  
+  totalPedidosPendentesLabel.innerText = "Total Pedidos Pendentes: " + totalPedidosPendentes;
+  totalPedidosFinalizadosLabel.innerText = "Total Pedidos Finalizados: " + totalPedidosFinalizados;
+}
 
 addClientBtn.addEventListener("click", function () {
+  atualizarLabels();
   // Verifica se o nome do cliente não está vazio
   if (clientName.value.trim() === "") {
     alert("Por favor, insira o nome do cliente.");
@@ -118,11 +129,20 @@ addClientBtn.addEventListener("click", function () {
   readyClient.innerText = "Pronto";
   readyClient.type = "button";
   readyClient.addEventListener("click", function () {
-    divClient.remove();
-    readyClient.remove();
-    dateHoursCurrent.remove();
-    clientNameListRemove.remove();
-    clientListOk.appendChild(divClient);
+    if (totalPedidosPendentes > 0) {
+      divClient.remove();
+      readyClient.remove();
+      dateHoursCurrent.remove();
+      clientNameListRemove.remove();
+      clientListOk.appendChild(divClient);
+      totalPedidosPendentes--;
+      totalPedidosFinalizados++;
+  
+      atualizarLabels();
+    } else {
+    
+      alert("Não há pedidos pendentes para marcar como pronto.");
+    }
 
     let dateCurrent = new Date();
 
@@ -160,6 +180,7 @@ addClientBtn.addEventListener("click", function () {
     timeOk.innerText = dateHoursCurrentFormatted;
 
     divClient.appendChild(timeOk);
+    atualizarLabels();
   });
 
   const clientNameListRemove = document.createElement("label");
@@ -219,15 +240,42 @@ addClientBtn.addEventListener("click", function () {
     hf101Li.innerText = "";
   }
 
+  const informacaoTextarea = document.getElementById("informacao");
+  const informacaoValue = informacaoTextarea.value;
+  const informacaoLabel = document.createElement("label");
+  informacaoLabel.className = "informacaoLabel";
+
+  if (informacaoValue.trim() !== "") {
+    informacaoLabel.innerText = "Informação-Extra: " + informacaoValue;
+  } else {
+    informacaoLabel.innerText = "";
+  }
+
+  const checkboxAmbosLados = document.getElementById("ambosLados");
+  const ambosLadosLabel = document.createElement("label");
+  ambosLadosLabel.className = "ambosLadosLabel";
+
+  if (checkboxAmbosLados.checked) {
+    ambosLadosLabel.innerText = " Ambos lados: Sim";
+  } else {
+    ambosLadosLabel.innerText = "";
+  }
+
   const localLi = document.createElement("li");
   localLi.className = "localLi";
-  localLi.innerText = local.value
+  localLi.innerText = local.value;
 
   const outraEmbalagem = document.createElement("li");
   outraEmbalagem.className = "sosGli";
-  outraEmbalagem.innerText = inputOutraEmbalagem.value
+  outraEmbalagem.innerText = inputOutraEmbalagem.value;
 
-  clientNameList.append(localLi,readyClient, clientNameListRemove);
+  clientNameList.append(
+    localLi,
+    ambosLadosLabel,
+    informacaoLabel,
+    readyClient,
+    clientNameListRemove
+  );
 
   divClient.append(
     clientNameList,
@@ -242,13 +290,18 @@ addClientBtn.addEventListener("click", function () {
 
   clientList.appendChild(divClient);
 
+  totalPedidosPendentes++
+
   clientName.value = "";
   sosP.value = "";
   sosM.value = "";
   sosG.value = "";
   sosGG.value = "";
+  checkboxAmbosLados.checked = false;
+  informacaoTextarea.value = "";
 
   alert("Adicionado com sucesso");
+  atualizarLabels();
 });
 
 const addOutraEmbalagem = document.getElementById("addOutraEmbalagem");
@@ -266,8 +319,8 @@ addOutraEmbalagem.addEventListener("click", function () {
   const inputEmbalagem = document.createElement("input");
   inputEmbalagem.type = "text";
   inputEmbalagem.id = "numberSosG";
-  inputEmbalagem.value = ''
-  document.body.appendChild(inputEmbalagem)
+  inputEmbalagem.value = "";
+  document.body.appendChild(inputEmbalagem);
 
   // Cria a label para a embalagem
   const labelEmbalagem = document.createElement("label");
