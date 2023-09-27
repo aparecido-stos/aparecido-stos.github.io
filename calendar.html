@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estoque</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="/menu/style.css" />
+  </head>
+
+  <body>
+    <nav class="menuLateral">
+      <div class="btnExpandir">
+        <i class="bi bi-list" id="btnExp"></i>
+      </div>
+      <ul>
+        
+        <li class="itemMenu">
+          <a href="/menu/menu.html">
+            <span class="icon"><i class="bi bi-house"></i></span>
+            <span class="txtLink">Início</span>
+          </a>
+        </li>
+        <li class="itemMenu">
+            <a href="#">
+              <span class="icon"><i class="bi bi-person-circle"></i></span>
+              <span class="txtLink">Usuário</span>
+            </a>
+        </li>
+        <li class="itemMenu ativo">
+          <a href="/calendar.html">
+            <span class="icon"><i class="bi bi-calendar2-date"></i></span>
+            <span class="txtLink">Calendário</span>
+          </a>
+        </li>
+        <li class="itemMenu">
+          <a href="#">
+            <span class="icon"><i class="bi bi-gear"></i></span>
+            <span class="txtLink">Configurações</span>
+          </a>
+        </li>
+        <li class="itemMenu">
+          <a href="/index.css">
+            <span class="icon"><i class="bi bi-escape"></i></span>
+            <span class="txtLink">Sair</span>
+          </a>
+      </li>
+      </ul>
+    </nav>
+
+    <section class="main">
+      <section class="inputMarket">
+        <h3 id="title">Calendário</h3>
+        <hr />
+        <div id="minhaModal" class="modal">
+          <div class="modalConteudo">
+            <span class="fechar" id="fecharModal">&times;</span>
+            <div class="dadosClient">
+            <h3 class="addPedidosTitle">Adicionar Pedidos</h3>
+            <hr>
+  </div>
+      <section id="menuPedidos">
+        <section class="pedidosAFazer">
+          <h2 class="pedidos">Pedidos pendentes</h2>
+          <label for="totalPedidosPendentes" class="totalPedidosPendentes">Total Pedidos:</label>
+          <span class="totalText"></span>
+          <ul id="clientList"></ul>
+        </section>
+      </section>
+    </section>
+    <script src="/menu/main.js"></script>
+  </body>
+</html>

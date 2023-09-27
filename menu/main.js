@@ -1,3 +1,4 @@
+
 //janela de adicionar clientes
 const btnAbrirModal = document.getElementById("title");
 const modal = document.getElementById("minhaModal");
@@ -55,11 +56,17 @@ let totalPedidosPendentes = 0;
 let totalPedidosFinalizados = 0;
 
 function atualizarLabels() {
-  const totalPedidosPendentesLabel = document.querySelector(".totalPedidosPendentes");
-  const totalPedidosFinalizadosLabel = document.querySelector(".totalPedidosFinalizados");
-  
-  totalPedidosPendentesLabel.innerText = "Total Pedidos Pendentes: " + totalPedidosPendentes;
-  totalPedidosFinalizadosLabel.innerText = "Total Pedidos Finalizados: " + totalPedidosFinalizados;
+  const totalPedidosPendentesLabel = document.querySelector(
+    ".totalPedidosPendentes"
+  );
+  const totalPedidosFinalizadosLabel = document.querySelector(
+    ".totalPedidosFinalizados"
+  );
+
+  totalPedidosPendentesLabel.innerText =
+    "Total Pedidos Pendentes: " + totalPedidosPendentes;
+  totalPedidosFinalizadosLabel.innerText =
+    "Total Pedidos Finalizados: " + totalPedidosFinalizados;
 }
 
 addClientBtn.addEventListener("click", function () {
@@ -134,13 +141,12 @@ addClientBtn.addEventListener("click", function () {
       readyClient.remove();
       dateHoursCurrent.remove();
       clientNameListRemove.remove();
-      clientListOk.appendChild(divClient);
+      clientListOk.prepend(divClient);
       totalPedidosPendentes--;
       totalPedidosFinalizados++;
-  
+    
       atualizarLabels();
     } else {
-    
       alert("Não há pedidos pendentes para marcar como pronto.");
     }
 
@@ -188,7 +194,13 @@ addClientBtn.addEventListener("click", function () {
   clientNameListRemove.innerText = "Excluir";
   clientNameListRemove.type = "button";
   clientNameListRemove.addEventListener("click", function () {
-    divClient.remove();
+    if (totalPedidosPendentes > 0) {
+      divClient.remove();
+      totalPedidosPendentes--;
+      atualizarLabels();
+    } else {
+      alert("Não há pedidos pendentes para marcar como pronto.");
+    }
   });
 
   const clientNameList = document.createElement("li");
@@ -290,7 +302,7 @@ addClientBtn.addEventListener("click", function () {
 
   clientList.appendChild(divClient);
 
-  totalPedidosPendentes++
+  totalPedidosPendentes++;
 
   clientName.value = "";
   sosP.value = "";
