@@ -1,15 +1,19 @@
-
 #ambosLados {
   height: 15px;
   width: 15px;
 }
 
-#informacao {
+#observacoes {
   width: 300px;
   height: 60px;
 }
 
-.totalPedidosFinalizados,.totalPedidosPendentes {
+.observacoesLabel{
+  font-size: 15px;
+}
+
+.totalPedidosFinalizados,
+.totalPedidosPendentes {
   font-size: 15px;
   color: rgb(0, 0, 0);
 }
@@ -40,13 +44,16 @@
 .modalConteudo {
   background-color: #ffffffe4;
   position: absolute;
-  height: 90%;
-  width: 80%;
+  height: auto;
+  width: auto;
+  max-height: 90%;
+  max-width: 80%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
   border-radius: 5px;
+  overflow: auto;
 }
 
 .fechar {
@@ -55,8 +62,6 @@
   right: 10px;
   cursor: pointer;
 }
-
-
 
 /*menu lateral*/
 
@@ -92,7 +97,6 @@ nav.menuLateral {
   .UlPedidos {
     columns: 1;
   }
-
 }
 
 nav.menuLateral.expandir {
@@ -148,8 +152,8 @@ ul li.itemMenu {
 ul li.ativo {
   background-color: #0275d8;
 }
- /*fim do menu lateral*/
- 
+/*fim do menu lateral*/
+
 body {
   font-family: Georgia, "Times New Roman", Times, serif;
   background-color: #3d35ba;
@@ -315,12 +319,10 @@ input::placeholder {
 
 #addClientBtn {
   border-radius: 50px;
-  height: 23px;
-  width: 25%;
+  height: 25px;
+  width: 30%;
   text-align: center;
   font-size: 15px;
-  padding-left: 4px;
-  margin: 3px;
   color: #0275d8;
   outline-color: #0275d8;
   border: none;
@@ -341,8 +343,7 @@ input::placeholder {
 #numberhf101,
 #numberhf102,
 #numberhf132,
-#numberhf100tp
- {
+#numberhf100tp {
   border-radius: 30px;
   text-align: center;
   font-size: 15px;
@@ -359,6 +360,4 @@ input::placeholder {
 
 .inputMarket {
   padding-top: 18px;
-
 }
-

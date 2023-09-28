@@ -1,4 +1,3 @@
-
 //janela de adicionar clientes
 const btnAbrirModal = document.getElementById("title");
 const modal = document.getElementById("minhaModal");
@@ -68,6 +67,8 @@ function atualizarLabels() {
   totalPedidosFinalizadosLabel.innerText =
     "Total Pedidos Finalizados: " + totalPedidosFinalizados;
 }
+
+let inputEmbalagem = ''
 
 addClientBtn.addEventListener("click", function () {
   atualizarLabels();
@@ -144,7 +145,7 @@ addClientBtn.addEventListener("click", function () {
       clientListOk.prepend(divClient);
       totalPedidosPendentes--;
       totalPedidosFinalizados++;
-    
+
       atualizarLabels();
     } else {
       alert("Não há pedidos pendentes para marcar como pronto.");
@@ -252,15 +253,15 @@ addClientBtn.addEventListener("click", function () {
     hf101Li.innerText = "";
   }
 
-  const informacaoTextarea = document.getElementById("informacao");
-  const informacaoValue = informacaoTextarea.value;
-  const informacaoLabel = document.createElement("label");
-  informacaoLabel.className = "informacaoLabel";
+  const observacoesTextarea = document.getElementById("observacoes");
+  const observacoesValue = observacoesTextarea.value;
+  const observacoesLabel = document.createElement("label");
+  observacoesLabel.className = "observacoesLabel";
 
-  if (informacaoValue.trim() !== "") {
-    informacaoLabel.innerText = "Informação-Extra: " + informacaoValue;
+  if (observacoesValue.trim() !== "") {
+    observacoesLabel.innerText = "Observações: " + observacoesValue;
   } else {
-    informacaoLabel.innerText = "";
+    observacoesLabel.innerText = "";
   }
 
   const checkboxAmbosLados = document.getElementById("ambosLados");
@@ -277,14 +278,24 @@ addClientBtn.addEventListener("click", function () {
   localLi.className = "localLi";
   localLi.innerText = local.value;
 
+  const inputOutraEmbalagem = document.getElementById(
+   "inputOutraEmbalagem"
+  ).value;
+ 
   const outraEmbalagem = document.createElement("li");
   outraEmbalagem.className = "sosGli";
-  outraEmbalagem.innerText = inputOutraEmbalagem.value;
+  outraEmbalagem.innerText = inputOutraEmbalagem
+
+  inputEmbalagem
+
+  inputEmbalagem = document.createElement("input");
+  inputEmbalagem.id = "numberSosG";
+  inputEmbalagem.innerHTML = inputEmbalagem.value;
 
   clientNameList.append(
     localLi,
     ambosLadosLabel,
-    informacaoLabel,
+    observacoesLabel,
     readyClient,
     clientNameListRemove
   );
@@ -296,6 +307,7 @@ addClientBtn.addEventListener("click", function () {
     sosGli,
     sosGGli,
     hf101Li,
+    inputEmbalagem,
     outraEmbalagem,
     dateHoursCurrent
   );
@@ -310,37 +322,45 @@ addClientBtn.addEventListener("click", function () {
   sosG.value = "";
   sosGG.value = "";
   checkboxAmbosLados.checked = false;
-  informacaoTextarea.value = "";
+  observacoesTextarea.value = "";
 
   alert("Adicionado com sucesso");
   atualizarLabels();
+  adicionarInputEmbalagemNaDivClient();
 });
+
 
 const addOutraEmbalagem = document.getElementById("addOutraEmbalagem");
 
 addOutraEmbalagem.addEventListener("click", function () {
   // Obtém o valor do input para o nome da outra embalagem
-  let inputOutraEmbalagem = document.getElementById(
+  const inputOutraEmbalagem = document.getElementById(
     "inputOutraEmbalagem"
   ).value;
 
-  // Cria um novo elemento de lista
-  const novoItemPedido = document.createElement("li");
-
-  // Cria a caixa de input
   const inputEmbalagem = document.createElement("input");
-  inputEmbalagem.type = "text";
+  inputEmbalagem.type = "number";
   inputEmbalagem.id = "numberSosG";
-  inputEmbalagem.value = "";
-  document.body.appendChild(inputEmbalagem);
+  inputEmbalagem.value = inputEmbalagem.value
 
   // Cria a label para a embalagem
   const labelEmbalagem = document.createElement("label");
-  labelEmbalagem.textContent = inputOutraEmbalagem;
+  labelEmbalagem.innerText = inputOutraEmbalagem
+
+  const novoItemPedido = document.createElement("li");
 
   // Adiciona a caixa de input e a label ao novo elemento de lista
   novoItemPedido.append(inputEmbalagem, labelEmbalagem);
   // Adiciona o novo elemento de lista à lista de pedidos (UlPedidos)
   const UlPedidos = document.querySelector(".UlPedidos");
   UlPedidos.appendChild(novoItemPedido);
+  adicionarInputEmbalagemNaDivClient();
 });
+
+function adicionarInputEmbalagemNaDivClient() {
+  // Verifique se inputEmbalagem foi criado
+  if (inputEmbalagem) {
+    // Adicione inputEmbalagem à divClient
+    divClient.appendChild(inputEmbalagem);
+  }
+}
