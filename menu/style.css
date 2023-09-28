@@ -343,7 +343,8 @@ input::placeholder {
 #numberhf101,
 #numberhf102,
 #numberhf132,
-#numberhf100tp {
+#numberhf100tp,
+#OutraEmbalagemInput {
   border-radius: 30px;
   text-align: center;
   font-size: 15px;
