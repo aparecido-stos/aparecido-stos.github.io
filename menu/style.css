@@ -362,3 +362,46 @@ input::placeholder {
 .inputMarket {
   padding-top: 18px;
 }
+
+/*botao dentro do input*/
+.input-with-button {
+  display: flex; /* Usando flexbox para alinhar elementos lado a lado */
+  align-items: center; /* Alinhar verticalmente os elementos ao centro */
+}
+
+#inputOutraEmbalagem {
+  text-align: center;
+  height: 25px;
+  border-radius: 30px;
+  color: skyblue;
+  display: block;
+  margin: auto;
+  width: 80%;
+  padding-left: 10px;
+  outline-color: #0275d8;
+  border: 0;
+  background: white;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.input-with-button input {
+  flex: 1; /* O campo de entrada de texto ocupa o espaço restante */
+}
+
+.input-with-button button {
+  padding: 4px 10px;
+  margin-left: 5px;
+  font-weight: bold;
+  background: transparent;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+  color: #007bff;
+  height: 25px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.input-with-button button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
