@@ -66,7 +66,7 @@ function atualizarLabels() {
     "Total Pedidos Pendentes: " + totalPedidosPendentes;
   totalPedidosFinalizadosLabel.innerText =
     "Total Pedidos Finalizados: " + totalPedidosFinalizados;
-  }
+}
 
 addClientBtn.addEventListener("click", function () {
   atualizarLabels();
@@ -276,13 +276,19 @@ addClientBtn.addEventListener("click", function () {
   localLi.className = "localLi";
   localLi.innerText = local.value;
 
-  //const inputEmbalagemNova = document.querySelector('.inputRow').value
- // const labelEmbalagemNova = document.querySelector('.inputRow').value
+  const inputEmbalagemNova = document.getElementById(
+    'OutraEmbalagem' + inputRows
+  )
+  const labelEmbalagemNova = document.getElementById(
+    'OutraEmbalagem' + inputRows
+  )
 
- // const outraEmbalagem = createElement('li')
- // outraEmbalagem.className = 'sosG'
- // outraEmbalagem.innerText = 'nome'
-  
+  alert(labelEmbalagemNova)
+  alert(inputEmbalagemNova)
+
+  const outraEmbalagem = createElement("li");
+  outraEmbalagem.className = "sosG";
+  outraEmbalagem.innerText = inputEmbalagemNova.value + "" + labelEmbalagemNova.value;
 
   clientNameList.append(
     localLi,
@@ -299,6 +305,7 @@ addClientBtn.addEventListener("click", function () {
     sosGli,
     sosGGli,
     hf101Li,
+    outraEmbalagem,
     dateHoursCurrent
   );
 
@@ -325,7 +332,7 @@ function createLabel(text, htmlFor) {
   return label;
 }
 
-function createInput(id, value, name, type = "text", placeholder = "") {
+function createInput(id, value, name, type = "number", placeholder = "") {
   const input = document.createElement("input");
   input.id = id;
   input.value = value;
@@ -335,23 +342,31 @@ function createInput(id, value, name, type = "text", placeholder = "") {
   return input;
 }
 
-
 const addOutraEmbalagem = document.getElementById("addOutraEmbalagem");
 
-const outraEmabalensWarray = []
-let inputRows = 0
+const outraEmabalensWarray = [];
+let inputRows = 0;
 addOutraEmbalagem.addEventListener("click", function () {
-  const UlPedidos = document.querySelector('.UlPedidos')
-  const inputOutraEmbalagem = document.getElementById('inputOutraEmbalagem')
-  const newRow = document.createElement('li')
-  const rowIndice = inputRows
-  inputRows++
-  newRow.id = 'inputRow' + rowIndice
-  newRow.className = 'inputRow'
+  const UlPedidos = document.querySelector(".UlPedidos");
 
-  const NameEmbalagemLabel = createLabel(inputOutraEmbalagem.value, 'OutraEmbalagem' + rowIndice)
-  const inputEmbalagem = createInput('OutraEmbalagem' + rowIndice, '', 'inputEmbalagem')
+  const inputOutraEmbalagem = document.getElementById("inputOutraEmbalagem");
 
-  newRow.append(inputEmbalagem,NameEmbalagemLabel)
-  UlPedidos.appendChild(newRow)
-  })
+  const newRow = document.createElement("li");
+  const rowIndice = inputRows;
+  inputRows++;
+  newRow.id = "inputRow" + rowIndice;
+  newRow.className = "inputRow";
+
+  const NameEmbalagemLabel = createLabel(
+    inputOutraEmbalagem.value,
+    "OutraEmbalagem" + rowIndice
+  );
+  const inputEmbalagem = createInput(
+    "OutraEmbalagem" + rowIndice,
+    "",
+    "inputEmbalagem"
+  );
+
+  newRow.append(inputEmbalagem, NameEmbalagemLabel);
+  UlPedidos.appendChild(newRow);
+});
