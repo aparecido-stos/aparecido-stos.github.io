@@ -8,7 +8,7 @@
   height: 60px;
 }
 
-.observacoesLabel{
+.observacoesLabel {
   font-size: 15px;
 }
 
@@ -47,7 +47,7 @@
   height: auto;
   width: auto;
   max-height: 90%;
-  max-width: 90%;
+  max-width: 100%;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -344,8 +344,7 @@ input::placeholder {
 #numberhf102,
 #numberhf132,
 #numberhf100tp,
-#OutraEmbalagem0
- {
+#OutraEmbalagem0 {
   border-radius: 30px;
   text-align: center;
   font-size: 15px;
