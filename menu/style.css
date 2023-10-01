@@ -363,6 +363,17 @@ input::placeholder {
   padding-top: 18px;
 }
 
+.option-custom {
+  background-color: #007bff; /* Cor de fundo personalizada */
+  color: #fff; /* Cor do texto personalizada */
+  font-weight: bold; /* Estilo de fonte personalizado */
+  /* Outros estilos personalizados */
+}
+
+#opcoes {
+  width: 130px; /* Defina a largura desejada */
+}
+
 /*botao dentro do input*/
 .input-with-button {
   display: flex; /* Usando flexbox para alinhar elementos lado a lado */
