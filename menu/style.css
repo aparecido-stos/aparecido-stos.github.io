@@ -376,8 +376,6 @@ input::placeholder {
   color: skyblue;
   display: block;
   margin: auto;
-  width: 80%;
-  padding-left: 10px;
   outline-color: #0275d8;
   border: 0;
   background: white;
@@ -385,7 +383,9 @@ input::placeholder {
 }
 
 .input-with-button input {
-  flex: 1; /* O campo de entrada de texto ocupa o espaço restante */
+  display: inline-block;
+  margin: auto;
+  width: 80%;
 }
 
 .input-with-button button {
