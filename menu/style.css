@@ -1,5 +1,4 @@
 #ambosLados {
-  display: inline-block;
   height: 14px;
   width: 14px;
 }
@@ -52,7 +51,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 8px;
+  padding: 30px;
+  margin: 20px;
   border-radius: 5px;
   overflow: auto;
 }
