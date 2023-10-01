@@ -276,17 +276,13 @@ addClientBtn.addEventListener("click", function () {
   localLi.className = "localLi";
   localLi.innerText = local.value;
 
-  const inputOutraEmbalagem = document.getElementById(
-   "inputOutraEmbalagem"
-  ).value;
+  //const inputEmbalagemNova = document.querySelector('.inputRow').value
+ // const labelEmbalagemNova = document.querySelector('.inputRow').value
 
-  const OutraEmbalagemInput = document.getElementById(
-    "OutraEmbalagemInput"
-   ).value;
- 
-  const outraEmbalagem = document.createElement("li");
-  outraEmbalagem.className = "sosGli";
-  outraEmbalagem.innerText = OutraEmbalagemInput + " " + inputOutraEmbalagem
+ // const outraEmbalagem = createElement('li')
+ // outraEmbalagem.className = 'sosG'
+ // outraEmbalagem.innerText = 'nome'
+  
 
   clientNameList.append(
     localLi,
@@ -303,7 +299,6 @@ addClientBtn.addEventListener("click", function () {
     sosGli,
     sosGGli,
     hf101Li,
-    outraEmbalagem,
     dateHoursCurrent
   );
 
@@ -323,27 +318,40 @@ addClientBtn.addEventListener("click", function () {
   atualizarLabels();
 });
 
+function createLabel(text, htmlFor) {
+  const label = document.createElement("label");
+  label.htmlFor = htmlFor;
+  label.textContent = text;
+  return label;
+}
+
+function createInput(id, value, name, type = "text", placeholder = "") {
+  const input = document.createElement("input");
+  input.id = id;
+  input.value = value;
+  input.name = name;
+  input.type = type;
+  input.plecaholder = placeholder;
+  return input;
+}
+
 
 const addOutraEmbalagem = document.getElementById("addOutraEmbalagem");
 
+const outraEmabalensWarray = []
+let inputRows = 0
 addOutraEmbalagem.addEventListener("click", function () {
-  // Obtém o valor do input para o nome da outra embalagem
-  const inputOutraEmbalagem = document.getElementById(
-    "inputOutraEmbalagem"
-  ).value;
+  const UlPedidos = document.querySelector('.UlPedidos')
+  const inputOutraEmbalagem = document.getElementById('inputOutraEmbalagem')
+  const newRow = document.createElement('li')
+  const rowIndice = inputRows
+  inputRows++
+  newRow.id = 'inputRow' + rowIndice
+  newRow.className = 'inputRow'
 
-  const inputEmbalagem = document.createElement("input");
-  inputEmbalagem.type = "number";
-  inputEmbalagem.id = "OutraEmbalagemInput";
+  const NameEmbalagemLabel = createLabel(inputOutraEmbalagem.value, 'OutraEmbalagem' + rowIndice)
+  const inputEmbalagem = createInput('OutraEmbalagem' + rowIndice, '', 'inputEmbalagem')
 
-// Cria a label para a embalagem
-  const labelEmbalagem = document.createElement("label");
-  labelEmbalagem.innerText = inputOutraEmbalagem
-
-  const novoItemPedido = document.createElement("li");
-  // Adiciona a caixa de input e a label ao novo elemento de lista
-  novoItemPedido.append(inputEmbalagem, labelEmbalagem);
-  // Adiciona o novo elemento de lista à lista de pedidos (UlPedidos)
-  const UlPedidos = document.querySelector(".UlPedidos");
-  UlPedidos.appendChild(novoItemPedido);
+  newRow.append(inputEmbalagem,NameEmbalagemLabel)
+  UlPedidos.appendChild(newRow)
   })
