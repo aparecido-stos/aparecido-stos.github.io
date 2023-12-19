@@ -319,8 +319,8 @@ input::placeholder {
   color: white;
 }
 
-#addClientBtn {
-  border-radius: 50px;
+#addClientBtn,#backClientBtn {
+  border-radius: 10px;
   height: 25px;
   width: 30%;
   text-align: center;
@@ -334,6 +334,11 @@ input::placeholder {
 }
 
 #addClientBtn:hover {
+  background-color: #0275d8;
+  color: white;
+}
+
+#backClientBtn:hover {
   background-color: #0275d8;
   color: white;
 }

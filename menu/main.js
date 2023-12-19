@@ -276,20 +276,6 @@ addClientBtn.addEventListener("click", function () {
   localLi.className = "localLi";
   localLi.innerText = local.value;
 
-  const inputEmbalagemNova = document.getElementById(
-    'OutraEmbalagem' + inputRows
-  )
-  const labelEmbalagemNova = document.getElementById(
-    'OutraEmbalagem' + inputRows
-  )
-
-  alert(labelEmbalagemNova)
-  alert(inputEmbalagemNova)
-
-  const outraEmbalagem = createElement("li");
-  outraEmbalagem.className = "sosG";
-  outraEmbalagem.innerText = inputEmbalagemNova.value + "" + labelEmbalagemNova.value;
-
   clientNameList.append(
     localLi,
     ambosLadosLabel,
@@ -305,7 +291,6 @@ addClientBtn.addEventListener("click", function () {
     sosGli,
     sosGGli,
     hf101Li,
-    outraEmbalagem,
     dateHoursCurrent
   );
 
