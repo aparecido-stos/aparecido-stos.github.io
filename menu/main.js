@@ -310,23 +310,6 @@ addClientBtn.addEventListener("click", function () {
   atualizarLabels();
 });
 
-function createLabel(text, htmlFor) {
-  const label = document.createElement("label");
-  label.htmlFor = htmlFor;
-  label.textContent = text;
-  return label;
-}
-
-function createInput(id, value, name, type = "number", placeholder = "") {
-  const input = document.createElement("input");
-  input.id = id;
-  input.value = value;
-  input.name = name;
-  input.type = type;
-  input.plecaholder = placeholder;
-  return input;
-}
-
 const addOutraEmbalagem = document.getElementById("addOutraEmbalagem");
 
 const outraEmabalensWarray = [];
