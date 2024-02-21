@@ -82,7 +82,11 @@ addClientBtn.addEventListener("click", function () {
     sosP.value.trim() === "" &&
     sosM.value.trim() === "" &&
     sosG.value.trim() === "" &&
-    sosGG.value.trim() === ""
+    sosGG.value.trim() === "" &&
+    hf101.value.trim() === "" &&
+    hf102.value.trim() === "" &&
+    hf132.value.trim() === "" &&
+    hf100tp.value.trim() === ""
   ) {
     alert("Por favor, insira pelo menos um valor em um campo SOS.");
     return;
