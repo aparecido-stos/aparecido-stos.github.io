@@ -319,7 +319,8 @@ input::placeholder {
   color: white;
 }
 
-#addClientBtn,#backClientBtn {
+#addClientBtn,
+#backClientBtn {
   border-radius: 10px;
   height: 25px;
   width: 30%;
@@ -351,7 +352,7 @@ input::placeholder {
 #numberhf102,
 #numberhf132,
 #numberhf100tp,
-#OutraEmbalagem0 {
+#OutraEmbalagem {
   border-radius: 30px;
   text-align: center;
   font-size: 15px;

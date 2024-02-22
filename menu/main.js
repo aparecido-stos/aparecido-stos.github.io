@@ -316,29 +316,26 @@ addClientBtn.addEventListener("click", function () {
 
 const addOutraEmbalagem = document.getElementById("addOutraEmbalagem");
 
-const outraEmabalensWarray = [];
-let inputRows = 0;
 addOutraEmbalagem.addEventListener("click", function () {
   const UlPedidos = document.querySelector(".UlPedidos");
 
-  const inputOutraEmbalagem = document.getElementById("inputOutraEmbalagem");
+  const inputOutraEmbalagem = document.getElementById(
+    "inputOutraEmbalagem"
+  ).value;
 
   const newRow = document.createElement("li");
-  const rowIndice = inputRows;
-  inputRows++;
-  newRow.id = "inputRow" + rowIndice;
-  newRow.className = "inputRow";
+  newRow.id = "outraEmbalagem";
 
-  const NameEmbalagemLabel = createLabel(
-    inputOutraEmbalagem.value,
-    "OutraEmbalagem" + rowIndice
-  );
-  const inputEmbalagem = createInput(
-    "OutraEmbalagem" + rowIndice,
-    "",
-    "inputEmbalagem"
-  );
+  const OutraRowEmbalagemLabel = document.createElement("label");
+  OutraRowEmbalagemLabel.id = "outraEmbalagem";
+  OutraRowEmbalagemLabel.innerText = inputOutraEmbalagem;
 
-  newRow.append(inputEmbalagem, NameEmbalagemLabel);
+  const OutraRowEmbalagemInput = document.createElement("input");
+  OutraRowEmbalagemInput.id = "OutraEmbalagem";
+  OutraRowEmbalagemInput.type = "number";
+  OutraRowEmbalagemInput.min = "1";
+  OutraRowEmbalagemInput.innerText = OutraRowEmbalagemInput.value;
+
+  newRow.append(OutraRowEmbalagemInput, OutraRowEmbalagemLabel);
   UlPedidos.appendChild(newRow);
 });
