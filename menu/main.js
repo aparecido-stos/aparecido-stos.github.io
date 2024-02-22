@@ -316,28 +316,13 @@ addClientBtn.addEventListener("click", function () {
 
 const addOutraEmbalagem = document.getElementById("addOutraEmbalagem");
 
-const outraEmabalensWarray = [];
-let inputRows = 0;
 addOutraEmbalagem.addEventListener("click", function () {
   const UlPedidos = document.querySelector(".UlPedidos");
 
   const inputOutraEmbalagem = document.getElementById("inputOutraEmbalagem");
 
   const newRow = document.createElement("li");
-  const rowIndice = inputRows;
-  inputRows++;
-  newRow.id = "inputRow" + rowIndice;
   newRow.className = "inputRow";
-
-  const NameEmbalagemLabel = createLabel(
-    inputOutraEmbalagem.value,
-    "OutraEmbalagem" + rowIndice
-  );
-  const inputEmbalagem = createInput(
-    "OutraEmbalagem" + rowIndice,
-    "",
-    "inputEmbalagem"
-  );
 
   newRow.append(inputEmbalagem, NameEmbalagemLabel);
   UlPedidos.appendChild(newRow);
