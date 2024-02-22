@@ -324,21 +324,16 @@ addOutraEmbalagem.addEventListener("click", function () {
   ).value;
 
   const newRow = document.createElement("li");
-  const rowIndice = inputRows;
-  inputRows++;
-  newRow.id = "inputRow" + rowIndice;
-  newRow.className = "inputRow";
+  newRow.id = "outraEmbalagem";
 
-  const NameEmbalagemLabel = createLabel(
-    inputOutraEmbalagem.value,
-    "OutraEmbalagem" + rowIndice
-  );
-  const inputEmbalagem = createInput(
-    "OutraEmbalagem" + rowIndice,
-    "",
-    "inputEmbalagem"
-  );
+  const NameEmbalagemLabel = document.createElement("label");
+  NameEmbalagemLabel.id = "outraEmbalagem";
+  NameEmbalagemLabel.innerText = inputOutraEmbalagem;
 
-  newRow.append(OutraRowEmbalagemInput, OutraRowEmbalagemLabel);
+  const NameEmbalagemInput = document.createElement("input");
+  NameEmbalagemInput.id = "OutraEmbalagem";
+  NameEmbalagemInput.innerText = NameEmbalagemInput.value;
+
+  newRow.append(NameEmbalagemInput, NameEmbalagemLabel);
   UlPedidos.appendChild(newRow);
 });
