@@ -69,20 +69,18 @@ function atualizarLabels() {
 }
 
 const addOutraEmbalagem = document.getElementById("addOutraEmbalagem");
-let NameEmbalagemLabel = "";
+let inputOutraEmbalagem = "";
 let NameEmbalagemInput = "";
 
 addOutraEmbalagem.addEventListener("click", function () {
   const UlPedidos = document.querySelector(".UlPedidos");
 
-  const inputOutraEmbalagem = document.getElementById(
-    "inputOutraEmbalagem"
-  ).value;
+  inputOutraEmbalagem = document.getElementById("inputOutraEmbalagem").value;
 
   const newRow = document.createElement("li");
   newRow.id = "outraEmbalagem";
 
-  NameEmbalagemLabel = document.createElement("label");
+  const NameEmbalagemLabel = document.createElement("label");
   NameEmbalagemLabel.id = "outraEmbalagem";
   NameEmbalagemLabel.innerText = inputOutraEmbalagem;
 
@@ -286,7 +284,7 @@ addClientBtn.addEventListener("click", function () {
   const NewEmbalagemLi = document.createElement("li");
   NewEmbalagemLi.className = "outraEmbalagem";
   NewEmbalagemLi.innerText =
-    NameEmbalagemInput.value + " " + NameEmbalagemLabel.value;
+    NameEmbalagemInput.value + " " + inputOutraEmbalagem;
 
   const observacoesTextarea = document.getElementById("observacoes");
   const observacoesValue = observacoesTextarea.value;
