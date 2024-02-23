@@ -68,6 +68,34 @@ function atualizarLabels() {
     "Total Pedidos Finalizados: " + totalPedidosFinalizados;
 }
 
+const addOutraEmbalagem = document.getElementById("addOutraEmbalagem");
+let NameEmbalagemLabel = "";
+let NameEmbalagemInput = "";
+
+addOutraEmbalagem.addEventListener("click", function () {
+  const UlPedidos = document.querySelector(".UlPedidos");
+
+  const inputOutraEmbalagem = document.getElementById(
+    "inputOutraEmbalagem"
+  ).value;
+
+  const newRow = document.createElement("li");
+  newRow.id = "outraEmbalagem";
+
+  NameEmbalagemLabel = document.createElement("label");
+  NameEmbalagemLabel.id = "outraEmbalagem";
+  NameEmbalagemLabel.innerText = inputOutraEmbalagem;
+
+  NameEmbalagemInput = document.createElement("input");
+  NameEmbalagemInput.id = "OutraEmbalagem";
+  NameEmbalagemInput.type = "number";
+  NameEmbalagemInput.min = "1";
+  NameEmbalagemInput.innerText = NameEmbalagemInput.value;
+
+  newRow.append(NameEmbalagemInput, NameEmbalagemLabel);
+  UlPedidos.appendChild(newRow);
+});
+
 addClientBtn.addEventListener("click", function () {
   atualizarLabels();
   // Verifica se o nome do cliente não está vazio
@@ -255,6 +283,11 @@ addClientBtn.addEventListener("click", function () {
     hf101Li.innerText = "";
   }
 
+  const NewEmbalagemLi = document.createElement("li");
+  NewEmbalagemLi.className = "outraEmbalagem";
+  NewEmbalagemLi.innerText =
+    NameEmbalagemInput.value + " " + NameEmbalagemLabel.value;
+
   const observacoesTextarea = document.getElementById("observacoes");
   const observacoesValue = observacoesTextarea.value;
   const observacoesLabel = document.createElement("label");
@@ -295,6 +328,7 @@ addClientBtn.addEventListener("click", function () {
     sosGli,
     sosGGli,
     hf101Li,
+    NewEmbalagemLi,
     dateHoursCurrent
   );
 
@@ -312,28 +346,4 @@ addClientBtn.addEventListener("click", function () {
 
   alert("Adicionado com sucesso");
   atualizarLabels();
-});
-
-const addOutraEmbalagem = document.getElementById("addOutraEmbalagem");
-
-addOutraEmbalagem.addEventListener("click", function () {
-  const UlPedidos = document.querySelector(".UlPedidos");
-
-  const inputOutraEmbalagem = document.getElementById(
-    "inputOutraEmbalagem"
-  ).value;
-
-  const newRow = document.createElement("li");
-  newRow.id = "outraEmbalagem";
-
-  const NameEmbalagemLabel = document.createElement("label");
-  NameEmbalagemLabel.id = "outraEmbalagem";
-  NameEmbalagemLabel.innerText = inputOutraEmbalagem;
-
-  const NameEmbalagemInput = document.createElement("input");
-  NameEmbalagemInput.id = "OutraEmbalagem";
-  NameEmbalagemInput.innerText = NameEmbalagemInput.value;
-
-  newRow.append(NameEmbalagemInput, NameEmbalagemLabel);
-  UlPedidos.appendChild(newRow);
 });
