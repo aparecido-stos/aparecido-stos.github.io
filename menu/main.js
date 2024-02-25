@@ -92,6 +92,7 @@ addOutraEmbalagem.addEventListener("click", function () {
 
   newRow.append(NameEmbalagemInput, NameEmbalagemLabel);
   UlPedidos.appendChild(newRow);
+
 });
 
 addClientBtn.addEventListener("click", function () {
