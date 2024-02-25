@@ -18,7 +18,6 @@
         <i class="bi bi-list" id="btnExp"></i>
       </div>
       <ul>
-        
         <li class="itemMenu ativo">
           <a href="menu.html">
             <span class="icon"><i class="bi bi-house"></i></span>
@@ -26,10 +25,10 @@
           </a>
         </li>
         <li class="itemMenu">
-            <a href="#">
-              <span class="icon"><i class="bi bi-person-circle"></i></span>
-              <span class="txtLink">Usuário</span>
-            </a>
+          <a href="#">
+            <span class="icon"><i class="bi bi-person-circle"></i></span>
+            <span class="txtLink">Usuário</span>
+          </a>
         </li>
         <li class="itemMenu">
           <a href="/calendar.html">
@@ -48,10 +47,9 @@
             <span class="icon"><i class="bi bi-escape"></i></span>
             <span class="txtLink">Sair</span>
           </a>
-      </li>
+        </li>
       </ul>
     </nav>
-
     <section class="main">
       <section class="inputMarket">
         <h3 id="title">Adicionar Clientes</h3>
@@ -60,96 +58,177 @@
           <div class="modalConteudo">
             <span class="fechar" id="fecharModal">&times;</span>
             <div class="dadosClient">
-            <h3 class="addPedidosTitle">Adicionar Pedidos</h3>
-            <hr>
-        <p>
-          <input type="text" name="clientName" id="clientName" placeholder="Nome do cliente..." />
-          <br>
-         <label for="opcao">Local:</label>
-          <select id="opcoes">
-        <option class="option-custom" value="Santos - SP">Santos - SP</option>
-        <option class="option-custom" value="São Vicente - SP">São Vicente - SP</option>
-        <option class="option-custom" value="Guarujá - SP">Guarujá - SP</option>
-        <option class="option-custom" value="Loja Conselheiro">Loja Conselheiro</option>
-        <option class="option-custom" value="Loja Canal 3">Loja Canal 3</option>
-        <option class="option-custom" value="Praia Grande - SP">Praia Grande - SP</option>
-        <option class="option-custom" value="Cubatão - SP">Cubatão - SP</option>
-        <option class="option-custom" value="Bertioga - SP">Bertioga - SP</option>
-        <option class="option-custom" value="Registro - SP">Registro - SP</option>
-        <option class="option-custom" value="Peruíbe - SP">Peruíbe - SP</option>
-        <option class="option-custom" value="Itanhaém - SP">Itanhaém - SP</option>
-        <option class="option-custom" value="Mongaguá - SP">Mongaguá - SP</option>
-    </select>
-  
-    <label for="ambosLados">Ambos lados:</label> 
-    <input type="checkbox" id="ambosLados"/>
-    <br><br>
-    <label for="observacoes">Observações:</label>
-    <br>
-    <textarea name="observacoes" id="observacoes" cols="35" rows="6"></textarea>
-  </div>
-  <div class="pedidocliente">
-    <hr>
-    <div class="input-with-button">
-      <input type="text" name="inputOutraEmbalagem" id="inputOutraEmbalagem" placeholder="Outra Embalagem..."/>
-      <button id="addOutraEmbalagem" type="button">Adicionar</button>
-    </div>
+              <h3 class="addPedidosTitle">Informações do cliente</h3>
+              <hr />
 
-    <ul class="UlPedidos">
+              <input
+                type="text"
+                name="clientName"
+                id="clientName"
+                placeholder="Nome do cliente..."
+              />
+              <br />
+              <label for="opcao">Local:</label>
+              <select id="opcoes">
+                <option class="option-custom" value="Santos - SP">
+                  Santos - SP
+                </option>
+                <option class="option-custom" value="São Vicente - SP">
+                  São Vicente - SP
+                </option>
+                <option class="option-custom" value="Guarujá - SP">
+                  Guarujá - SP
+                </option>
+                <option class="option-custom" value="Loja Conselheiro">
+                  Loja Conselheiro
+                </option>
+                <option class="option-custom" value="Loja Canal 3">
+                  Loja Canal 3
+                </option>
+                <option class="option-custom" value="Praia Grande - SP">
+                  Praia Grande - SP
+                </option>
+                <option class="option-custom" value="Cubatão - SP">
+                  Cubatão - SP
+                </option>
+                <option class="option-custom" value="Bertioga - SP">
+                  Bertioga - SP
+                </option>
+                <option class="option-custom" value="Registro - SP">
+                  Registro - SP
+                </option>
+                <option class="option-custom" value="Peruíbe - SP">
+                  Peruíbe - SP
+                </option>
+                <option class="option-custom" value="Itanhaém - SP">
+                  Itanhaém - SP
+                </option>
+                <option class="option-custom" value="Mongaguá - SP">
+                  Mongaguá - SP
+                </option>
+              </select>
 
-        <li>
-          <input type="number" name="numberSosP" id="numberSosP" min="1" />
-          <label for="Sos">Sos P / 50</label>
-        </li>
-        <li>
-          <input type="number" name="numberSosM" id="numberSosM" min="1"/>
-          <label for="Sos">Sos M / 50</label>
-        </li>
-        <li>
-          <input type="number" name="numberSosG" id="numberSosG" min="1"/>
-          <label for="Sos">Sos G / 50</label>
-        </li>
-        <li>
-          <input type="number" name="numberSosGG" id="numberSosGG" min="1"/>
-          <label for="Sos">Sos GG / 50</label>
-        </li>
-        <li>
-          <input type="number" name="numberhf101" id="numberhf101" min="1"/>
-          <label for="Sos">HF 101</label>
-        </li>
-        <li>
-          <input type="number" name="numberhf102" id="numberhf102" min="1"/>
-          <label for="Sos">HF 102</label>
-        </li>
-          <li>
-          <input type="number" name="numberhf132" id="numberhf132" min="1"/>
-          <label for="Sos">HF 132</label>
-        </li>
-          <li>
-          <input type="number" name="numberhf100tp" id="numberhf100tp" min="1"/>
-          <label for="Sos">HF 100 Tp</label>
-        </li>
-  
-        </ul>
-        
-        <br>
-          <button id="addClientBtn" type="button">Salvar</button>
-          <button id="backClientBtn" type="button">Voltar</button>
-        </p>
+              <label for="ambosLados">Ambos lados:</label>
+              <input type="checkbox" id="ambosLados" />
+              <br /><br />
+              <label for="observacoes">Observações:</label>
+              <br />
+              <textarea
+                name="observacoes"
+                id="observacoes"
+                cols="35"
+                rows="6"
+              ></textarea>
+            </div>
+            <div class="pedidocliente">
+              <hr />
+              <h3 class="addPedidosTitle">Produtos do cliente</h3>
+              <div class="input-with-button">
+                <input
+                  type="text"
+                  name="inputOutraEmbalagem"
+                  id="inputOutraEmbalagem"
+                  placeholder="Outra Embalagem..."
+                />
+                <button id="addOutraEmbalagem" type="button">Adicionar</button>
+              </div>
+
+              <ul class="UlPedidos">
+                <li>
+                  <input
+                    type="number"
+                    name="numberSosP"
+                    id="numberSosP"
+                    min="1"
+                  />
+                  <label for="Sos">Sos P / 50</label>
+                </li>
+                <li>
+                  <input
+                    type="number"
+                    name="numberSosM"
+                    id="numberSosM"
+                    min="1"
+                  />
+                  <label for="Sos">Sos M / 50</label>
+                </li>
+                <li>
+                  <input
+                    type="number"
+                    name="numberSosG"
+                    id="numberSosG"
+                    min="1"
+                  />
+                  <label for="Sos">Sos G / 50</label>
+                </li>
+                <li>
+                  <input
+                    type="number"
+                    name="numberSosGG"
+                    id="numberSosGG"
+                    min="1"
+                  />
+                  <label for="Sos">Sos GG / 50</label>
+                </li>
+                <li>
+                  <input
+                    type="number"
+                    name="numberhf101"
+                    id="numberhf101"
+                    min="1"
+                  />
+                  <label for="Sos">HF 101</label>
+                </li>
+                <li>
+                  <input
+                    type="number"
+                    name="numberhf102"
+                    id="numberhf102"
+                    min="1"
+                  />
+                  <label for="Sos">HF 102</label>
+                </li>
+                <li>
+                  <input
+                    type="number"
+                    name="numberhf132"
+                    id="numberhf132"
+                    min="1"
+                  />
+                  <label for="Sos">HF 132</label>
+                </li>
+                <li>
+                  <input
+                    type="number"
+                    name="numberhf100tp"
+                    id="numberhf100tp"
+                    min="1"
+                  />
+                  <label for="Sos">HF 100 Tp</label>
+                </li>
+              </ul>
+
+              <br />
+              <button id="addClientBtn" type="button">Salvar</button>
+              <button id="backClientBtn" type="button">Voltar</button>
+            </div>
+          </div>
         </div>
-        </div>
-        </div>
-    </section>
+      </section>
       <section id="menuPedidos">
         <section class="pedidosAFazer">
           <h2 class="pedidos">Pedidos pendentes</h2>
-          <label for="totalPedidosPendentes" class="totalPedidosPendentes">Total Pedidos:</label>
+          <label for="totalPedidosPendentes" class="totalPedidosPendentes"
+            >Total Pedidos:</label
+          >
           <span class="totalText"></span>
           <ul id="clientList"></ul>
         </section>
         <section class="pedidosProntos">
           <h2 class="pedidos">Pedidos finalizados</h2>
-          <label for="totalPedidosFinalizados" class="totalPedidosFinalizados">Total Pedidos:</label>
+          <label for="totalPedidosFinalizados" class="totalPedidosFinalizados"
+            >Total Pedidos:</label
+          >
           <span class="totalText"></span>
           <ul id="clientListOk"></ul>
         </section>
