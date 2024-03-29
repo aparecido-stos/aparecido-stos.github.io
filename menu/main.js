@@ -1,3 +1,9 @@
+let params = new URLSearchParams(window.location.search);
+let users = JSON.parse(params.get("users"));
+
+let pessoa = users[0].username;
+alert(JSON.stringify(pessoa));
+
 //janela de adicionar clientes
 const btnAbrirModal = document.getElementById("title");
 const modal = document.getElementById("minhaModal");
@@ -92,7 +98,6 @@ addOutraEmbalagem.addEventListener("click", function () {
 
   newRow.append(NameEmbalagemInput, NameEmbalagemLabel);
   UlPedidos.appendChild(newRow);
-
 });
 
 addClientBtn.addEventListener("click", function () {

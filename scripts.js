@@ -6,7 +6,7 @@ btnLogin.addEventListener("click", function () {
     { username: "Gustavo", password: "1234" },
     { username: "Aparecido", password: "1234" },
   ];
-
+  window.location.href = "/menu/menu.html?users=" + JSON.stringify(users);
   loadingOverlay.style.display = "block"; // Exibe a tela de carregamento
   setTimeout(function () {
     const user = users.find(
